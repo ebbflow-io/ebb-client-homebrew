@@ -7,6 +7,36 @@ class Ebbflow < Formula
 
   def install
     bin.install "ebbflow"
+    sbin.install "ebbflowd"
+
+    (etc/"ebbflow").mkpath # Config file loc
+  end
+
+  def plist
+    <<~EOS
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+        <key>KeepAlive</key>
+        <true/>
+        <key>Label</key>
+        <string>EbbflowDaemon</string>
+        <key>ProgramArguments</key>
+        <array>
+          <string>#{sbin}/ebbflowd</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>WorkingDirectory</key>
+        <string>#{HOMEBREW_PREFIX}</string>
+        <key>StandardOutPath</key>
+        <string>#{var}/log/ebbflowd.log</string>
+        <key>StandardErrorPath</key>
+        <string>#{var}/log/ebbflowd.log</string>
+      </dict>
+      </plist>
+    EOS
   end
 end
 
