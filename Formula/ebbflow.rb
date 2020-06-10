@@ -1,15 +1,19 @@
 class Ebbflow < Formula
   desc "Client for using Ebbflow"
   homepage "https://github.com/ebbflow-io/ebbflow"
-  url "https://github.com/ebbflow-io/ebbflow/releases/download/0.4.1/ebbflow-mac.zip"
-  sha256 "5605466bd7e7529d59a08b4fb061779a9cede38c5ca266e135a6bd2005a8989f"
-  version "0.4.1"
+  url "https://github.com/ebbflow-io/ebbflow/releases/download/0.5.22/ebbflow_0.5.22_macos.zip"
+  sha256 "c35f66f8c021db43dbf061f6b4f66c06f6af01cf56a10c9077ac14e04ae44033"
+  version "0.5.22"
 
   def install
     bin.install "ebbflow"
     sbin.install "ebbflowd"
 
     (etc/"ebbflow").mkpath # Config file loc
+  end
+
+  def post_install
+    ohai "📣 After upgrade, must manually restart the brew service, e.g. 'brew services restart ebbflow' (maybe with sudo!)"
   end
 
   def plist
