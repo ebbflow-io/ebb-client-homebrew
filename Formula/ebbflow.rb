@@ -33,11 +33,11 @@ class Ebbflow < Formula
         <key>RunAtLoad</key>
         <true/>
         <key>WorkingDirectory</key>
-        <string>#{HOMEBREW_PREFIX}</string>
+        <string>#{etc}/ebbflow</string>
         <key>StandardOutPath</key>
-        <string>#{var}/log/ebbflowd.log</string>
+        <string>#{etc}/ebbflow/ebbflowd.log</string>
         <key>StandardErrorPath</key>
-        <string>#{var}/log/ebbflowd.log</string>
+        <string>#{etc}/ebbflow/ebbflowd.log</string>
       </dict>
       </plist>
     EOS
