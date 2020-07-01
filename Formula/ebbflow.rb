@@ -1,9 +1,9 @@
 class Ebbflow < Formula
   desc "Client for using Ebbflow"
   homepage "https://github.com/ebbflow-io/ebbflow"
-  url "https://github.com/ebbflow-io/ebbflow/releases/download/0.5.33/ebbflow_0.5.33_macos.zip"
-  sha256 "db700ff3f920c60bd3dfa936729863f212c3601b06df59b6f98165d055bcd711"
-  version "0.5.33"
+  url "https://github.com/ebbflow-io/ebbflow/releases/download/0.9.0/ebbflow_0.9.0_macos.zip"
+  sha256 "51d69ed2d60392ae6f310fc3c04c9ad65595af6dad0345e3928a43d710f072bc"
+  version "0.9.0"
 
   def install
     bin.install "ebbflow"
